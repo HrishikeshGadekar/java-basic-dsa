@@ -1,6 +1,6 @@
 package org.javadsa.basicDataStructures;
 
-public class LinkedListImpl {
+public class SinglyLinkedListImpl {
 
     static class Node {
         private int value;
@@ -34,14 +34,14 @@ public class LinkedListImpl {
 
     Node head;
 
-    public LinkedListImpl() {
+    public SinglyLinkedListImpl() {
     }
 
-    public LinkedListImpl(Node head) {
+    public SinglyLinkedListImpl(Node head) {
         this.head = head;
     }
 
-    public LinkedListImpl insertElement(LinkedListImpl linkedList, int value) {
+    public SinglyLinkedListImpl insertElement(SinglyLinkedListImpl linkedList, int value) {
         Node nodeToInsert = new Node(value, null);
         if (linkedList.head == null) {
             linkedList.head = nodeToInsert;
@@ -55,7 +55,7 @@ public class LinkedListImpl {
         return linkedList;
     }
 
-    public LinkedListImpl removeElement(LinkedListImpl linkedList, int value) {
+    public SinglyLinkedListImpl removeElement(SinglyLinkedListImpl linkedList, int value) {
         if (this.searchElement(linkedList, value)) {
             Node currentNode = linkedList.head;
             Node previousNode = null;
@@ -75,7 +75,7 @@ public class LinkedListImpl {
         return linkedList;
     }
 
-    public void printLinkedList(LinkedListImpl linkedList) {
+    public void printLinkedList(SinglyLinkedListImpl linkedList) {
         Node currentNode = linkedList.head;
         System.out.print("The Linked List is: ");
         while (currentNode != null) {
@@ -85,7 +85,7 @@ public class LinkedListImpl {
         System.out.println();
     }
 
-    public boolean searchElement(LinkedListImpl linkedList, int value) {
+    public boolean searchElement(SinglyLinkedListImpl linkedList, int value) {
         Node currentNode = linkedList.head;
         while (currentNode != null) {
             if (currentNode.getValue() == value) {
@@ -98,7 +98,7 @@ public class LinkedListImpl {
 
 
     public static void main(String[] args) {
-        LinkedListImpl linkedList = new LinkedListImpl();
+        SinglyLinkedListImpl linkedList = new SinglyLinkedListImpl();
         linkedList = linkedList.insertElement(linkedList, 1);
         linkedList = linkedList.insertElement(linkedList, 2);
         linkedList = linkedList.insertElement(linkedList, 3);
